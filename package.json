@@ -8,9 +8,9 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@sendgrid/mail": "7.7.0",
-    "@twilio-paste/core": "^10.20.0",
-    "@twilio-paste/icons": "^6.1.0",
-    "@twilio-paste/theme": "^5.3.3",
+    "@twilio-paste/core": "^17.1.0",
+    "@twilio-paste/icons": "^9.4.0",
+    "@twilio-paste/theme": "^8.1.0",
     "@twilio/conversations": "2.1.0-rc.0",
     "@types/file-saver": "2.0.5",
     "file-saver": "2.0.5",
