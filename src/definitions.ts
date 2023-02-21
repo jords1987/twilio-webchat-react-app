@@ -5,6 +5,13 @@ export type Token = {
     expiration: string;
 };
 
+export type CloseSession = {
+    token: string;
+    conversationSid: string;
+    identity: string;
+    expiration: string;
+};
+
 export type FileAttachmentConfig = {
     enabled?: boolean;
     maxFileSize?: number;

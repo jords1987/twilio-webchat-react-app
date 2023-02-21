@@ -1,6 +1,6 @@
 import log from "loglevel";
 
-import { Token } from "./definitions";
+import { CloseSession, Token } from "./definitions";
 
 const LOCAL_STORAGE_ITEM_ID = "TWILIO_WEBCHAT_WIDGET";
 
@@ -116,6 +116,10 @@ export const sessionDataHandler = {
         storeSessionData(newTokenData);
 
         return newTokenData;
+    },
+
+    closeSession: async (conversationSid: string ) => {
+        await contactBackend<CloseSession>("/closeSession", { conversationSid });
     },
 
     clear: () => {
