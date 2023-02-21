@@ -139,6 +139,26 @@ The email subject and content can be customised in the configuration object, as 
 
 The email subject and HTML email content can be customised using the configuration object, as described [here](#configuration).
 
+### Close Chat
+
+In order to enable the close chat button and the functionality for a customer to close the interaction with the agent, there are some setup steps required
+
+**Setup**
+
+1. Add a "Make HTTP Request" widget to the end of the studio flow that is used for chat initiation, after the "Send To Flex" widget. 
+2. Configure the "Request URL" with your backend server e.g `https://{mybackend}.com/updateCloseSessionAttributes`
+3. Set "Content Type" to Application/JSON
+4. Set the "Request Body" to pass through all parameters of your "Send To Flex" widget e.g
+```
+{
+"sendToFlexAttributes":{{widgets.{MySendToFlexWidget}.routing.properties.attributes}}
+}
+```
+
+With this enabled, the conversation will be updated with the details required to close the interaction each time a new chat is passed through to Flex.
+
+Note: If the "End Chat" button is not present on the chat widget, it is most likely that the conversation does not have the required attributes.
+
 # Project Structure
 
 Twilio Webchat React App is an open source repository that includes:
